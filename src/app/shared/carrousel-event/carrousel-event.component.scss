@@ -1,0 +1,39 @@
+swiper-container {
+    width: 100%;
+    height: 100%;
+  }
+
+  .carrousel_event swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 0px !important;
+  }
+
+  .carrousel_event swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+  }
+
+  .description{
+    position: absolute;
+    background: rgb(0, 0, 0,.7);
+    height: 100%;
+    width: 100%;
+    color: white;
+    opacity: 0;
+    transition: .3s ease-in-out;    
+}
+
+.description:hover{
+    opacity: 1;    
+}
+
+.description h3{
+    margin-top: 35%;
+}

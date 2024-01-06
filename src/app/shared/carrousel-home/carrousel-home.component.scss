@@ -1,0 +1,29 @@
+swiper-container {
+    width: 100%;
+    height: 100%;
+  }
+
+  swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .name{
+    position: absolute;
+    background: rgb(0, 0, 0,.8);
+    top: 0;
+    width: 100%;
+    font-size: 2rem;
+    color: #4859A8;
+  }

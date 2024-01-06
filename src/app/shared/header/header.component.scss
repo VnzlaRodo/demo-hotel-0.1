@@ -1,0 +1,33 @@
+#header{
+    overflow: hidden;
+    .card{
+        height: 100vh;
+    }
+
+    .card-img{
+        opacity: 0.7;
+        @media screen and (max-width: 992px) {            
+            height: 100%;
+        }
+    }
+    .card-img-overlay{
+        @media screen and (max-width: 992px) {
+            transform: translate(0,0) !important;
+            left: 0% !important;
+            top: 30% !important;
+            
+        }
+    }
+    h1{
+        padding-top: 20%;
+        
+        font-size:  calc(4em + 1vw);
+        @media screen and (max-width: 992px) {
+            font-size: 2.5rem;
+        }
+    }
+}
+
+
+
+

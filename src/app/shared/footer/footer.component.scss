@@ -1,0 +1,44 @@
+@import '../../app.component.scss';
+
+.footer{    
+    padding-inline: 10%;
+    .container-brand{        
+        padding-right: 10%;
+        @media screen and (max-width: 992px) {
+            padding-left: 10%;
+        }
+        .logo{
+            height: 140px;
+        }   
+    }
+    .redes a:hover{
+        background: white;
+    }
+    .sub-title{
+        padding-top: 40px;        
+    }
+    .navbar-nav{
+        padding-inline: 20%;
+        a{
+            color: white;
+            width: 100%;
+        }
+        a:hover{
+            background-color: #4859A8;
+        }
+    }
+    .container-contact{
+        padding-left: 10%;
+        @media screen and (max-width: 992px) {
+            padding-left: 15%;
+        }
+        .sub-title{
+            align-items: start;
+        }
+    }
+}
+
+
+
+
+ 

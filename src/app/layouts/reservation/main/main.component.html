@@ -1,0 +1,80 @@
+<!-- Section 1 -->
+<section class="section-1">
+    <div class="container">
+
+        <div class="row position-relative py-5">
+            <div class="col-lg-6 my-2">
+                <div class="row">
+                    <div class="offset-1 offset-lg-4 col-10 col-lg-8">
+                        
+                        <!--card-->
+                        <div id="card_habitation" class="card bg-dark text-white" [ngClass]="stateForm === true ? 'active' : 'off'" (click)="showMenuH()" >
+                            <img src="assets/img/reservation/habitation.jpg" class="card-img" alt="...">
+                            <div class="card-img-overlay">
+                                <h3 class="card-title position-absolute text-center">Habitationes</h3>                                
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 my-2">
+                <div class="row">
+                    <div class="offset-1 col-10 col-lg-8">
+                        
+                        <!--card-->
+                        <div id="card_reservation" class="card bg-dark text-white" [ngClass]="stateForm === true ? 'active' : 'off'" (click)="showMenuE()">
+                            <img src="assets/img/reservation/spaces.jpg" class="card-img" alt="...">
+                            <div class="card-img-overlay">
+                                <h3 class="card-title position-absolute text-center">Espacios para Eventos</h3>                                
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Formulario de fecha Habitacion -->
+            <div id="formH" class="offset-lg-3 col-lg-6" >
+                <div class="row mt-5">
+                    <div class="col menuH px-5">
+                        <button class="btn btn-dark" (click)="showMenuH()">atras</button>
+                        <h3 class="text-center my-2">RESERVA TU HABITACIÓN</h3>
+                        <form class="row g-3 justify-content-center" (ngSubmit)="onSubmitHabitation()" [formGroup]="formHabitation">
+                            <div class="col-auto">                
+                                <input type="date" class="form-control" formControlName="checkin" min="{{ today | date: 'YYYY-MM-dd' }}">
+                              </div>
+                              <div class="col-auto">                
+                                <input type="date" class="form-control" formControlName="checkout" min="{{ today | date: 'YYYY-MM-dd' }}">
+                              </div>
+                              <div class="col-12 mt-3">
+                                @if (checkDate) {
+                                    <span class="form-text text-danger">
+                                      La fecha Final no puede ser menor a la Inicial
+                                    </span>                                  
+                                }
+                              </div>
+                              <div class="d-grid gap-2">
+                              <button type="submit" class="btn btn-dark py-2 px-3 mb-3" [disabled]="formHabitation.invalid" >CONSULTAR</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Formulario de fecha Eventos -->
+            <div id="formE" class="offset-lg-3 col-lg-6">
+                <div class="row mt-5">
+                    <div class="col menuH px-5">
+                        <button class="btn btn-dark" (click)="showMenuE()">atras</button>
+                        <h3 class="text-center my-2 mb-4">RESERVA PARA EVENTOS</h3>
+                        <div class="d-grid gap-2">
+                            <a class="btn btn-dark py-2 px-3 mb-3" [routerLink]="['nuestros-espacios']">CONSULTAR</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</section>

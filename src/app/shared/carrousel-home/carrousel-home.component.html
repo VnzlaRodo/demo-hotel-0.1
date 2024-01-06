@@ -1,0 +1,29 @@
+<swiper-container class="mySwiper" pagination="true">
+    @for (item of data; track item._id) {
+        <swiper-slide>
+            <div class="name">{{ item.name | uppercase }}</div>
+            <img src="{{ item.images }}" alt="">
+        </swiper-slide>
+    }
+  </swiper-container>
+
+<!--<swiper
+    [spaceBetween]="30"
+    [centeredSlides]="true"
+    [autoplay]="{
+      delay: 4500,
+      disableOnInteraction: false
+    }"
+    [pagination]="{
+      clickable: true
+    }"
+    [navigation]="false"
+    class="mySwiper"
+  >
+  @for (item of data; track item._id) {
+      <ng-template swiperSlide>
+          <div class="name">{{ item.name | uppercase }}</div>
+          <img src="{{ item.images }}" alt="">
+        </ng-template>    
+  }  
+  </swiper>-->

@@ -1,0 +1,96 @@
+<!-- Header -->
+<section class="header">
+    <div class="card  position-relative rounded-0">
+      <div class="container-text-header">
+        <div class="card-img-overlay position-absolute top-50 start-50 translate-middle text-center p-0">
+            <h1 data-aos="zoom-in" data-aos-duration="1000" class="card-title">Demo Hotel</h1>
+            <h3 class="card-text d-none d-lg-block">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ab itaque dolore fugiat nostrum atque.</h3>
+        </div>
+        <h3 class="card-text position-absolute top-50 text-center d-lg-none">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ab itaque dolore fugiat nostrum atque.</h3>
+      </div>        
+    </div>
+</section>
+
+<!-- section 1 -->
+<section class="section-1 container">
+    <div class="row py-5 my-3">   
+        @for (item of dataService; track item.id) {          
+            <a class="col-12 col-md-6 col-lg-4" data-aos="zoom-in-left" data-aos-duration="3000" href="/servicios/#{{ item.name }}">
+                <div class="card mb-3">
+                    <div class="row g-0">
+                      <div class="col-4 container-ico">
+                        <img src="{{ item.ico }}" class="img-fluid rounded-start p-3" alt="...">
+                      </div>
+                      <div class="col-8">
+                        <div class="card-body">
+                          <h3 class="card-title">{{item.name | uppercase}}</h3>
+                          <p class="card-text">{{ item.description }}</p>
+                          
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+            </a>
+        }     
+    </div>
+</section>
+
+<!-- section 2 -->
+<section class="section-2 bg-dark">
+    <div class="row py-5">
+        <div class="col-12 offset-lg-2 col-lg-8 text-center mb-5">
+            <h2>La mejor experiencia</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam est esse tempore porro nam maxime nulla recusandae animi delectus cumque tempora sit corrupti commodi, aspernatur dignissimos voluptates. Optio, nesciunt totam?</p>
+        </div>
+        <!-- carrousel -->
+        <div class="col-12 p-0">
+            <app-carrousel-home [data]="imagesHotel"></app-carrousel-home>
+        </div>
+    </div>
+</section>
+
+<!-- section 3 -->
+<section class="section-3">
+    <div class="row py-5 text-center">
+        <h3>RESERVA ONLINE</h3>
+        <p>Garantizamos tu comodidad</p>
+        
+        <form class="row" (ngSubmit)="onSubmit()" [formGroup]="myForm">
+            <div class="col-6">                
+                <input type="date" class="form-control" formControlName="checkin" min="{{ today | date: 'YYYY-MM-dd' }}">
+              </div>
+              <div class="col-6">                
+                <input type="date" class="form-control" formControlName="checkout" min="{{ today | date: 'YYYY-MM-dd' }}">
+              </div>
+              <div class="col-12 mt-3">
+                @if (chechDate) {
+                    <span class="form-text text-danger">
+                      La fecha Final no puede ser menor a la Inicial
+                    </span>                  
+                }
+              </div>
+            <div class="col-12 mt-4">
+              <button type="submit" class="btn btn-dark py-2 px-3 mb-3" [disabled]="myForm.invalid">CONSULTAR</button>
+              <!--<button type="submit" class="btn btn-dark py-2 px-3 mb-3" [routerLink]="['/reserva/habitacion']">CONSULTAR</button>-->
+            </div>
+          </form>
+        
+    </div>
+</section>
+
+<!-- section 4 -->
+<section class="section-4">
+    <div class="row py-5">
+        <div class="col-12 offset-lg-2 col-lg-8 text-center mb-5">
+            <h2>Espacios para Eventos</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, similique blanditiis, culpa cumque facilis laboriosam deleniti reiciendis nostrum atque laborum quasi. Atque tempore quia delectus maxime ratione quam eos ipsum.</p>
+        </div>
+        <div class="col-12 p-0">
+            <app-carrousel-event data-aos="fade-left" [events]="dataEvent" ></app-carrousel-event>
+        </div>
+        <div class="col-12 offset-lg-2 col-lg-8 text-center mt-5">
+          <h3>NUESTROS ESPACIOS PARA TU EVENTO</h3>
+          <a class="btn btn-dark" [routerLink]="['/reserva/nuestros-espacios']">RESERVA AQUÍ</a>
+        </div>
+    </div>
+</section>

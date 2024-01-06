@@ -1,0 +1,50 @@
+@import '../../../app.component.scss';
+
+.section-1 .card{
+    //height: 500px;
+    cursor: pointer;
+    opacity: .9;
+    transition: .3s ease-in-out;
+}
+
+.section-1 .card:hover{
+    opacity: 1;
+    h3{
+        text-shadow: 1px 0px 2px rgb(0, 0, 0);
+        font-size: 2.5rem;
+    }
+}
+
+.section-1 .card h3{
+    top: 45%;
+    left: 15%;
+    right: 15%;
+    font-family: hello-paris-regular;
+    font-size: 2rem;
+    transition: .2s ease;
+}
+
+.menuH{
+    background: #4859A8;
+    border-radius: 5px;
+}
+
+.menuH h3{
+    color: white;
+}
+
+#card_habitation.active{
+    transition: all .2s;
+    
+    transform: rotatey(240deg);
+}
+
+#card_habitation.off{
+    transition: all .2s;
+    transform: rotatey(0);
+   
+}
+
+#formH{
+
+}

@@ -1,0 +1,55 @@
+<swiper-container
+    class="carrousel_event" 
+    pagination="true" 
+    pagination-clickable="true" 
+    slides-per-view="3"
+    space-between="30" 
+    free-mode="true">
+    @for (item of events; track item.id) {
+        <swiper-slide>
+            <div class="description">
+                <h3>{{ item.name | uppercase }}</h3>
+                <p>{{item.space.name | titlecase}}</p>
+                <div>Día: {{ item.date | date: 'shortDate' }}</div>
+                <div>Hora: {{ item.date | date: 'shortTime' }}</div>
+                <div>Precio: {{ item.price | currency: '$' }}</div>
+            </div>
+            <img src="http://127.0.0.1:8000/{{ item.avatar }}" alt="">
+        </swiper-slide>          
+    }
+  </swiper-container>
+
+<!--<swiper
+    [slidesPerView]="1"
+    [spaceBetween]="10"
+    [pagination]="{
+      clickable: true
+    }"
+    [breakpoints]="{
+      '640': {
+        slidesPerView: 2,
+        spaceBetween: 20
+      },
+      '768': {
+        slidesPerView: 3,
+        spaceBetween: 40
+      },
+      '1024': {
+        slidesPerView: 3,
+        spaceBetween: 50
+      }
+    }"
+    class="carrousel-event"
+  >
+      
+    <ng-template swiperSlide  *ngFor="let item of events">
+        <div class="description">
+            <h3>{{ item.name | uppercase }}</h3>
+            <p>{{item.space.name | titlecase}}</p>
+            <div>Día: {{ item.date | date: 'shortDate' }}</div>
+            <div>Hora: {{ item.date | date: 'shortTime' }}</div>
+            <div>Precio: {{ item.price | currency: '$' }}</div>
+        </div>
+        <img src="http://127.0.0.1:8000/{{ item.avatar }}" alt="">
+    </ng-template>
+  </swiper>-->

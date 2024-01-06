@@ -1,0 +1,63 @@
+@font-face {
+    font-family: hello-paris-bold;
+    src: url('../assets/font/hello-paris/hello-paris-sans-bold.ttf');
+}
+    
+@font-face {
+    font-family: hello-paris-extra;
+    src: url('../assets/font/hello-paris/hello-paris-sans-extralight.ttf');
+}
+
+@font-face {
+    font-family: hello-paris-regular;
+    src: url('../assets/font/hello-paris/hello-paris-sans-regular.ttf');
+}
+
+@font-face {
+    font-family: poppins-regular;
+    src: url('../assets/font/poppins/poppins-regular.ttf');
+}
+
+@font-face {
+    font-family: poppins-light;
+    src: url('../assets/font/poppins/poppins-light.ttf');
+}
+
+h1,h2{
+    font-family: hello-paris-bold;
+}
+
+h3{
+    font-family: poppins-regular;
+}
+
+p{
+    font-family: poppins-light;
+    font-size: .8rem;
+}
+
+.row{
+    margin: 0;
+}
+
+.bg-dark{
+    background: black !important;
+}
+
+.bg-primary{
+    background: #4859A8 !important;
+}
+
+.btn-dark{
+    background: rgb(5, 5, 5 ,.8) !important;
+    font-family: poppins-regular;
+    font-size: .8rem;
+}
+
+.btn-dark:hover{
+    background: rgb(5, 5, 5 ,1) !important;
+}
+
+section{
+    overflow: hidden;
+}
